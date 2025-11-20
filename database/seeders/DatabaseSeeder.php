@@ -13,11 +13,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
+        // Create Super Admin
         User::factory()->create([
-            'name' => 'Admin User',
-            'email' => 'admin@polda-jambi.go.id',
+            'name' => 'Super Admin',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('admin123'), // Ganti password sesuai kebutuhan
         ]);
         
         // Seed ALKOM data from HTML file - comprehensive data

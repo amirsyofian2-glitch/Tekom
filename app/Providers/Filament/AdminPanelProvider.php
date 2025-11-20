@@ -8,6 +8,16 @@ use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use App\Filament\Pages\Dashboard as AdminDashboard;
+use App\Filament\Resources\Users\UserResource;
+use App\Filament\Resources\Roles\RoleResource;
+use App\Filament\Resources\Permissions\PermissionResource;
+use App\Filament\Resources\Organizations\OrganizationResource;
+use App\Filament\Resources\Sites\SiteResource;
+use App\Filament\Resources\Towers\TowerResource;
+use App\Filament\Resources\EquipmentTypes\EquipmentTypeResource;
+use App\Filament\Resources\Inventories\InventoryResource;
+use App\Filament\Resources\UserActivities\UserActivityResource;
+use App\Filament\Resources\Reports\ReportResource;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
@@ -37,7 +47,18 @@ class AdminPanelProvider extends PanelProvider
                 'primary' => Color::Blue,
             ])
             ->topNavigation()
-            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
+            ->resources([
+                UserResource::class,
+                RoleResource::class,
+                PermissionResource::class,
+                OrganizationResource::class,
+                SiteResource::class,
+                TowerResource::class,
+                EquipmentTypeResource::class,
+                InventoryResource::class,
+                UserActivityResource::class,
+                ReportResource::class,
+            ])
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([
                 AdminDashboard::class,

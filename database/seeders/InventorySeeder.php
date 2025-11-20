@@ -46,6 +46,19 @@ class InventorySeeder extends Seeder
         $siteBrimob1 = Site::where('name', 'Site Brimob 1')->first();
         $siteBrimob2 = Site::where('name', 'Site Brimob 2')->first();
 
+        // Fallback to first site if specific sites not found
+        $defaultSite = Site::first();
+        $sitePolda = $sitePolda ?? $defaultSite;
+        $sitePolsektaKotabaru = $sitePolsektaKotabaru ?? $defaultSite;
+        $siteBrimob1 = $siteBrimob1 ?? $defaultSite;
+        $siteBrimob2 = $siteBrimob2 ?? $defaultSite;
+
+        // Skip seeding if no sites available
+        if (!$defaultSite) {
+            $this->command->warn('No sites found. Skipping inventory seeding.');
+            return;
+        }
+
         // Get equipment types
         $gtr8000 = EquipmentType::where('name', 'GTR8000')->first();
         $gtr800 = EquipmentType::where('name', 'GTR800')->first();
