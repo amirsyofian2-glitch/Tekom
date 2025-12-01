@@ -112,16 +112,16 @@
             x-init="initMap()"
         >
             {{-- Map container --}}
-            <div x-ref="mapContainer" style="width: 100%; height: 500px; position: relative;"></div>
-
-            {{-- Legend --}}
-            <div id="legend" style="position: absolute; bottom: 30px; right: 10px; background: rgba(255, 255, 255, 0.9); padding: 10px; border-radius: 5px; font-family: Arial, sans-serif; z-index: 1;">
-                <h4 style="margin: 0 0 5px 0;">Legenda</h4>
-                <div><span style="background-color: #FF0000; border-radius: 50%; display: inline-block; width: 12px; height: 12px; margin-right: 5px; border: 1px solid #fff;"></span>Tower</div>
-                <div style="margin-top: 5px; font-weight: bold;">Cluster Tower:</div>
-                <div><span style="background-color: #51bbd6; border-radius: 50%; display: inline-block; width: 12px; height: 12px; margin-right: 5px;"></span> 1-9 Tower</div>
-                <div><span style="background-color: #f1f075; border-radius: 50%; display: inline-block; width: 12px; height: 12px; margin-right: 5px;"></span> 10-29 Tower</div>
-                <div><span style="background-color: #f28cb1; border-radius: 50%; display: inline-block; width: 12px; height: 12px; margin-right: 5px;"></span> 30+ Tower</div>
+            <div x-ref="mapContainer" style="width: 100%; height: 500px; position: relative;">
+                {{-- Legend --}}
+                <div id="legend" style="position: absolute; bottom: 30px; right: 10px; background: rgba(255, 255, 255, 0.9); padding: 10px; border-radius: 5px; font-family: Arial, sans-serif; z-index: 1;">
+                    <h4 style="margin: 0 0 5px 0;">Legenda</h4>
+                    <div><span style="background-color: #FF0000; border-radius: 50%; display: inline-block; width: 12px; height: 12px; margin-right: 5px; border: 1px solid #fff;"></span>Tower</div>
+                    <div style="margin-top: 5px; font-weight: bold;">Cluster Tower:</div>
+                    <div><span style="background-color: #51bbd6; border-radius: 50%; display: inline-block; width: 12px; height: 12px; margin-right: 5px;"></span> 1-9 Tower</div>
+                    <div><span style="background-color: #f1f075; border-radius: 50%; display: inline-block; width: 12px; height: 12px; margin-right: 5px;"></span> 10-29 Tower</div>
+                    <div><span style="background-color: #f28cb1; border-radius: 50%; display: inline-block; width: 12px; height: 12px; margin-right: 5px;"></span> 30+ Tower</div>
+                </div>
             </div>
         </div>
     </x-filament::card>

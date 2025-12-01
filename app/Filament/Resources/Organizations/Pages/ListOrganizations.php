@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Organizations\Pages;
 
 use App\Filament\Resources\Organizations\OrganizationResource;
+use App\Filament\Resources\Organizations\Widgets\OrganizationStats;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
@@ -14,6 +15,13 @@ class ListOrganizations extends ListRecords
     {
         return [
             CreateAction::make(),
+        ];
+    }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            OrganizationStats::class,
         ];
     }
 }

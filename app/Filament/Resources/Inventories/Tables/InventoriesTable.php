@@ -163,13 +163,6 @@ class InventoriesTable
                         }
                         return $indicators;
                     }),
-                
-                Filter::make('maintenance_status')
-                    ->label('Status Maintenance')
-                    ->toggle()
-                    ->query(fn (Builder $query): Builder => $query->whereNotNull('next_maintenance')
-                        ->where('next_maintenance', '<=', now()))
-                    ->indicateUsing(fn (): string => 'Perlu Maintenance'),
                     
                 SelectFilter::make('is_active')
                     ->label('Status Aktif')

@@ -10,6 +10,13 @@ use Filament\Widgets\StatsOverviewWidget\Stat;
 
 class UserStatsWidget extends StatsOverviewWidget
 {
+    protected static bool $isHidden = true;
+
+    public static function canView(): bool
+    {
+        return false;
+    }
+    
     protected static ?int $sort = 1;
     
     protected function getStats(): array

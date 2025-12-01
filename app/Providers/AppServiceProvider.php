@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
@@ -31,8 +32,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-         if($this->app->environment('local')) {
-            URL::forceScheme('https');
-        }
+        // Super admin bypass all gates - untuk testing dan admin role
+        Gate::before(function ($user, $ability) {
+            if ($user->hasRole('admin')) {
+                return true;
+            }
+        });
     }
 }

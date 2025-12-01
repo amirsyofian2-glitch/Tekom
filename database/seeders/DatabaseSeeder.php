@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             SiteTowerSeeder::class,
             EquipmentTypeSeeder::class,
             InventorySeeder::class,
+            RolePermissionSeeder::class, // Seed roles & permissions
         ]);
     }
 }

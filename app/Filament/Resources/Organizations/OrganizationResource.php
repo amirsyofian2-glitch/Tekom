@@ -9,6 +9,7 @@ use App\Filament\Resources\Organizations\Pages\ViewOrganization;
 use App\Filament\Resources\Organizations\Schemas\OrganizationForm;
 use App\Filament\Resources\Organizations\Schemas\OrganizationInfolist;
 use App\Filament\Resources\Organizations\Tables\OrganizationsTable;
+use App\Filament\Resources\Organizations\Widgets\OrganizationStats;
 use App\Models\Organization;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -61,6 +62,13 @@ class OrganizationResource extends Resource
             'create' => CreateOrganization::route('/create'),
             'view' => ViewOrganization::route('/{record}'),
             'edit' => EditOrganization::route('/{record}/edit'),
+        ];
+    }
+
+    public static function getWidgets(): array
+    {
+        return [
+            OrganizationStats::class,
         ];
     }
 }

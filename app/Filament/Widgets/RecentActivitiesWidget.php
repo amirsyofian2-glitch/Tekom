@@ -10,6 +10,13 @@ use Illuminate\Database\Eloquent\Builder;
 
 class RecentActivitiesWidget extends TableWidget
 {
+    protected static bool $isHidden = true;
+
+    public static function canView(): bool
+    {
+        return false;
+    }
+    
     protected int | string | array $columnSpan = 'full';
     
     protected static ?int $sort = 2;
