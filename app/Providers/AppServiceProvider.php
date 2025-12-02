@@ -38,5 +38,9 @@ class AppServiceProvider extends ServiceProvider
                 return true;
             }
         });
+
+        if($this->app->environment('local')) {
+            URL::forceScheme('https');
+        }
     }
 }
